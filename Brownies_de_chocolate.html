@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta Mágica de Brownies de Chocolate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700;900&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles for fonts and animations */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #4A2C2A 0%, #6D4C41 50%, #8D6E63 100%);
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.15) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235D4037' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            min-height: 100vh;
+        }
+        .font-title {
+            font-family: 'Pacifico', cursive;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+        }
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+        }
+
+        /* Enhanced Keyframe Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes popIn { 0% { opacity: 0; transform: scale(0.5) rotate(-15deg); } 100% { opacity: 1; transform: scale(1) rotate(0deg); } }
+        @keyframes float { 0% { transform: translateY(0px) rotate(-5deg); } 50% { transform: translateY(-20px) rotate(5deg); } 100% { transform: translateY(0px) rotate(-5deg); } }
+        @keyframes melt { 0% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(0.1) translateY(100px); opacity: 0.3; } }
+        @keyframes crumble { 0% { transform: scale(1) rotate(0deg); opacity: 1; } 100% { transform: scale(0.3) rotate(180deg) translateY(50px); opacity: 0; } }
+        @keyframes oven-glow { 0%, 100% { box-shadow: 0 0 10px rgba(255, 100, 0, 0.5); } 50% { box-shadow: 0 0 30px rgba(255, 100, 0, 0.8), 0 0 40px rgba(255, 150, 0, 0.6); } }
+        @keyframes bubble { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        @keyframes steam { 0% { opacity: 0.8; transform: translateY(0) scale(1); } 100% { opacity: 0; transform: translateY(-50px) scale(1.5); } }
+        @keyframes chocolate-drip { 0% { transform: translateY(-20px) scaleY(0); } 100% { transform: translateY(20px) scaleY(1); } }
+        @keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+        @keyframes wiggle { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-3deg); } 75% { transform: rotate(3deg); } }
+        @keyframes glow { 0%, 100% { box-shadow: 0 0 5px rgba(139, 69, 19, 0.5); } 50% { box-shadow: 0 0 20px rgba(139, 69, 19, 0.8), 0 0 30px rgba(139, 69, 19, 0.6); } }
+        @keyframes bounce-gentle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); } 20%, 40%, 60%, 80% { transform: translateX(2px); } }
+
+        /* Animation Classes */
+        .animate-fadeInUp { animation: fadeInUp 1s ease-out .2s both; }
+        .animate-heartbeat { animation: heartbeat 2s ease-in-out infinite; }
+        .animate-wiggle:hover { animation: wiggle 0.5s ease-in-out; }
+        .animate-glow { animation: glow 2s ease-in-out infinite; }
+        .animate-bounce-gentle { animation: bounce-gentle 2s ease-in-out infinite; }
+        .animate-melt { animation: melt 3s ease-in-out infinite; }
+        .animate-bubble { animation: bubble 2s ease-in-out infinite; }
+        .animate-steam { animation: steam 2s ease-out infinite; }
+        .animate-oven-glow { animation: oven-glow 2s ease-in-out infinite; }
+
+        /* Staggered animation delays */
+        .delay-1 { animation-delay: 0.3s; } .delay-2 { animation-delay: 0.5s; } .delay-3 { animation-delay: 0.7s; }
+        .delay-4 { animation-delay: 0.9s; } .delay-5 { animation-delay: 1.1s; } .delay-6 { animation-delay: 1.3s; }
+        .delay-7 { animation-delay: 1.5s; } .delay-8 { animation-delay: 1.7s; }
+
+        /* Enhanced heading decoration */
+        .heading-decorated { position: relative; display: inline-block; padding-bottom: 15px; }
+        .heading-decorated::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: 0; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 90%; 
+            height: 6px; 
+            background: linear-gradient(90deg, #8B4513, #A0522D, #8B4513); 
+            border-radius: 3px; 
+            animation: glow 3s ease-in-out infinite; 
+        }
+        .heading-decorated::before { 
+            content: '🍫'; 
+            position: absolute; 
+            left: -40px; 
+            top: 50%; 
+            transform: translateY(-50%) rotate(-15deg); 
+            font-size: 2.5rem; 
+            opacity: 0.9; 
+            animation: bounce-gentle 3s ease-in-out infinite; 
+        }
+        
+        /* Enhanced Tooltip Style */
+        .tooltip { position: relative; display: inline-block; cursor: pointer; }
+        .tooltip .tooltip-text { 
+            visibility: hidden; 
+            width: 280px; 
+            background: linear-gradient(135deg, #5D4037, #3E2723); 
+            color: #fff; 
+            text-align: center; 
+            border-radius: 12px; 
+            padding: 12px 16px; 
+            position: absolute; 
+            z-index: 100; 
+            bottom: 130%; 
+            left: 50%; 
+            margin-left: -140px; 
+            opacity: 0; 
+            transition: all 0.4s ease; 
+            font-size: 0.9rem; 
+            line-height: 1.5; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            transform: translateY(10px);
+        }
+        .tooltip .tooltip-text::after { 
+            content: ""; 
+            position: absolute; 
+            top: 100%; 
+            left: 50%; 
+            margin-left: -8px; 
+            border-width: 8px; 
+            border-style: solid; 
+            border-color: #5D4037 transparent transparent transparent; 
+        }
+        .tooltip:hover .tooltip-text { 
+            visibility: visible; 
+            opacity: 1; 
+            transform: translateY(0);
+        }
+
+        /* Enhanced Custom Checkbox */
+        .checkmark { 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            background: linear-gradient(135deg, #f9f9f9, #e5e5e5);
+        }
+        .peer:checked ~ .checkmark { 
+            background: linear-gradient(135deg, #8B4513, #5D4037); 
+            border-color: #5D4037; 
+            transform: rotate(15deg) scale(1.1); 
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+        }
+        .peer:checked ~ .checkmark .fa-check { transform: scale(1) rotate(-15deg); opacity: 1; }
+        .peer:checked ~ .item-text { opacity: 0.6; }
+        .peer:checked ~ .item-text > * { text-decoration: line-through; text-decoration-color: #8B4513; text-decoration-thickness: 2px; }
+
+        /* Enhanced step circles */
+        .step-circle {
+            background: linear-gradient(135deg, #5D4037, #3E2723);
+            box-shadow: 0 4px 15px rgba(93, 64, 55, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .peer:checked ~ .step-container .step-circle {
+            background: linear-gradient(135deg, #8B4513, #5D4037);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Floating Brownies enhanced */
+        .floating-brownie { 
+            position: absolute; 
+            z-index: 0; 
+            opacity: 0.15; 
+            animation: float 8s ease-in-out infinite; 
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            background: linear-gradient(90deg, #8B4513, #A0522D);
+            height: 8px;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+            box-shadow: 0 2px 10px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Interactive ingredients visual */
+        .ingredient-visual {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Oven timer styles */
+        .oven-timer {
+            background: linear-gradient(135deg, #FF6B35, #FF4500);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 3px solid #FF4500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oven-timer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px
+            );
+            animation: oven-glow 3s linear infinite;
+        }
+
+        .oven-timer-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Difficulty indicator */
+        .difficulty-star {
+            color: #fbbf24;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            transition: transform 0.2s ease;
+        }
+        .difficulty-star:hover {
+            transform: scale(1.2) rotate(15deg);
+        }
+
+        /* Brownie love message styles */
+        .brownie-message {
+            background: linear-gradient(135deg, #FFF8E1, #FFE0B2);
+            border: 2px solid #FF8F00;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px rgba(255, 143, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .brownie-message::before {
+            content: '🍫';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 3rem;
+            opacity: 0.3;
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        /* Interactive baking mode */
+        .baking-mode .step-circle {
+            animation: oven-glow 2s ease-in-out infinite;
+        }
+        .baking-mode .current-step {
+            background: linear-gradient(135deg, #FF4500, #FF6B35) !important;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        /* Steam animation for hot brownies */
+        .steam-particle {
+            position: absolute;
+            width: 4px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 2px;
+            animation: steam 3s ease-out infinite;
+        }
+
+        /* Melting chocolate animation */
+        .chocolate-drip {
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, #8B4513, #5D4037);
+            border-radius: 0 0 3px 3px;
+            animation: chocolate-drip 2s ease-in-out infinite;
+            transform-origin: top;
+        }
+
+        /* Modal styles */
+        .modal {
+            backdrop-filter: blur(10px);
+            background: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff, #f9fafb);
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        /* Special brownie texture effect */
+        .brownie-texture {
+            background-image: 
+                radial-gradient(circle at 30% 20%, rgba(139, 69, 19, 0.8) 2px, transparent 2px),
+                radial-gradient(circle at 70% 60%, rgba(160, 82, 45, 0.6) 1px, transparent 1px),
+                radial-gradient(circle at 20% 80%, rgba(101, 67, 33, 0.7) 1.5px, transparent 1.5px);
+            background-size: 15px 15px, 20px 20px, 25px 25px;
+        }
+
+        /* Oven preheating animation */
+        .oven-preheat {
+            background: linear-gradient(45deg, #FF4500, #FF6B35, #FF8C00, #FF4500);
+            background-size: 300% 300%;
+            animation: oven-preheat-gradient 2s ease infinite;
+        }
+
+        @keyframes oven-preheat-gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Music Toggle Button -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="musicToggle" class="bg-amber-600 hover:bg-amber-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 animate-bounce-gentle">
+            <i class="fas fa-music text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-sm">
+        <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+    </div>
+
+    <!-- Floating Brownie Illustrations Enhanced -->
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+        <!-- Brownie piece 1 -->
+        <svg class="floating-brownie animate-bounce-gentle brownie-texture" style="width: 10%; top: 15%; left: -3%; animation-duration: 7s;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <radialGradient id="brownie1" cx="30%" cy="30%">
+                    <stop offset="0%" style="stop-color:#8B4513"/>
+                    <stop offset="100%" style="stop-color:#5D4037"/>
+                </radialGradient>
+            </defs>
+            <rect x="10" y="20" width="80" height="60" rx="8" fill="url(#brownie1)"/>
+            <circle cx="30" cy="40" r="2" fill="#A0522D"/>
+            <circle cx="60" cy="35" r="3" fill="#A0522D"/>
+            <circle cx="45" cy="65" r="2" fill="#A0522D"/>
+            <rect x="25" y="45" width="15" height="8" rx="2" fill="#654321"/>
+        </svg>
+        
+        <!-- Brownie piece 2 -->
+        <svg class="floating-brownie animate-bounce-gentle brownie-texture" style="width: 12%; top: 75%; right: -4%; animation-duration: 9s; animation-delay: 1s;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <radialGradient id="brownie2" cx="30%" cy="30%">
+                    <stop offset="0%" style="stop-color:#8B4513"/>
+                    <stop offset="100%" style="stop-color:#5D4037"/>
+                </radialGradient>
+            </defs>
+            <rect x="15" y="25" width="70" height="50" rx="6" fill="url(#brownie2)"/>
+            <circle cx="35" cy="45" r="2" fill="#D2691E"/>
+            <circle cx="55" cy="40" r="3" fill="#D2691E"/>
+            <circle cx="40" cy="60" r="2" fill="#D2691E"/>
+            <rect x="50" y="50" width="12" height="6" rx="1" fill="#654321"/>
+            <!-- Chocolate chips -->
+            <circle cx="45" cy="35" r="1.5" fill="#3E2723"/>
+            <circle cx="65" cy="55" r="1.5" fill="#3E2723"/>
+        </svg>
+
+        <!-- Steam particles -->
+        <div class="steam-particle" style="left: 80%; top: 60%; animation-delay: 0s;"></div>
+        <div class="steam-particle" style="left: 85%; top: 65%; animation-delay: 1s;"></div>
+        <div class="steam-particle" style="left: 75%; top: 55%; animation-delay: 0.5s;"></div>
+
+        <!-- Chocolate drips -->
+        <div class="chocolate-drip" style="left: 20%; top: 40%; height: 30px; animation-delay: 2s;"></div>
+        <div class="chocolate-drip" style="left: 60%; top: 70%; height: 25px; animation-delay: 1.5s;"></div>
+    </div>
+
+    <div class="container mx-auto p-4 sm:p-8 max-w-5xl relative z-10">
+        
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden animate-fadeInUp brownie-texture" style="box-shadow: 0 25px 50px -12px rgba(93, 64, 55, 0.4);">
+            
+            <!-- Enhanced Header -->
+            <div class="relative h-80 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-amber-900 via-amber-700 to-orange-800"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                
+                <!-- Floating chocolate chips for ambiance -->
+                <div class="absolute top-4 right-4 text-amber-300 text-2xl animate-heartbeat">🍫</div>
+                <div class="absolute top-12 right-20 text-amber-200 text-xl animate-heartbeat" style="animation-delay: 0.5s;">🧈</div>
+                <div class="absolute top-6 right-32 text-amber-400 text-lg animate-heartbeat" style="animation-delay: 1s;">🥚</div>
+                
+                <header class="absolute bottom-0 left-0 p-6 sm:p-10 w-full">
+                    <h1 class="font-title text-7xl text-white animate-wiggle">Brownies de Chocolate</h1>
+                    <p class="text-yellow-100 mt-3 text-2xl italic animate-fadeInUp delay-1">"Cuadrados perfectos de pura felicidad"</p>
+                    
+                    <!-- Recipe Info Cards -->
+                    <div class="flex flex-wrap gap-4 mt-6">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white flex items-center animate-fadeInUp delay-2">
+                            <i class="fas fa-clock mr-2 text-yellow-300"></i>
+                            <span>40 min</span>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white flex items-center animate-fadeInUp delay-3">
+                            <i class="fas fa-users mr-2 text-green-300"></i>
+                            <span>8 porciones</span>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white flex items-center animate-fadeInUp delay-4">
+                            <div class="mr-2">
+                                <i class="fas fa-star difficulty-star"></i>
+                                <i class="fas fa-star difficulty-star"></i>
+                                <i class="far fa-star difficulty-star"></i>
+                            </div>
+                            <span>Fácil</span>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white flex items-center animate-fadeInUp delay-5">
+                            <i class="fas fa-fire mr-2 text-red-300"></i>
+                            <span>180°C</span>
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            <div class="p-6 sm:p-10">
+                
+                <!-- Brownie Love Message Section -->
+                <div class="brownie-message mb-10 animate-fadeInUp delay-1">
+                    <h3 class="font-heading text-2xl text-amber-800 mb-3">
+                        <i class="fas fa-heart text-amber-600 mr-2 animate-heartbeat"></i>
+                        El secreto de los brownies perfectos 🍫
+                    </h3>
+                    <p class="text-amber-700 text-lg leading-relaxed">
+                        Los brownies nacieron por accidente en 1893 en Chicago. Una chef del Palmer House Hotel olvidó agregar levadura a su pastel de chocolate, pero el resultado fue tan delicioso que se convirtió en un clásico. La clave está en el <strong>punto exacto de cocción</strong>: ni muy húmedos ni muy secos. El palito de madera debe salir con algunas migas húmedas pegadas para lograr esa textura perfecta entre cremoso y firme.
+                    </p>
+                </div>
+
+                <!-- Baking Mode Toggle -->
+                <div class="text-center mb-8">
+                    <button id="bakingModeBtn" class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-all duration-300 animate-glow">
+                        <i class="fas fa-fire mr-3"></i>
+                        Activar Modo Horneado
+                        <div class="inline-block ml-2">
+                            <div class="steam-particle inline-block w-1 bg-white" style="height: 8px; animation-delay: 0s;"></div>
+                            <div class="steam-particle inline-block w-1 bg-white" style="height: 10px; animation-delay: 0.3s;"></div>
+                            <div class="steam-particle inline-block w-1 bg-white" style="height: 6px; animation-delay: 0.6s;"></div>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Ingredients Section Enhanced -->
+                    <div class="lg:col-span-1">
+                        <h2 class="font-heading text-4xl text-amber-900 mb-8 heading-decorated">Ingredientes del Éxito</h2>
+                        
+                        <!-- Shopping List Button -->
+                        <div class="mb-6">
+                            <button id="shoppingListBtn" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 animate-wiggle">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Lista de Compras
+                            </button>
+                        </div>
+                        
+                        <ul class="space-y-6 text-lg text-gray-700">
+                            <!-- Enhanced Ingredient Items with visuals -->
+                            <li class="delay-1" style="animation: fadeInUp 0.8s ease-out both;">
+                                <label class="flex items-center cursor-pointer group">
+                                    <input type="checkbox" class="hidden peer">
+                                    <span class="w-10 h-10 mr-4 border-2 border-gray-300 rounded-xl flex items-center justify-center checkmark group-hover:border-amber-500">
+                                        <i class="fas fa-check text-white transform scale-0 opacity-0 transition-transform duration-200"></i>
+                                    </span>
+                                    <div class="ingredient-visual bg-gradient-to-br from-amber-800 to-amber-900 group-hover:scale-110">
+                                        🍫
+                                    </div>
+                                    <div class="item-text transition-opacity duration-300 flex-grow">
+                                        <div class="transition-colors duration-300">
+                                            <strong class="text-xl">100g</strong> 
+                                            <span class="text-amber-800 font-semibold">Chocolate semiamargo</span>
+                                            <div class="text-sm text-gray-500 mt-1">El corazón chocolatoso de nuestros brownies</div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </li>
+                            
+                            <li class="delay-3" style="animation: fadeInUp 0.8s ease-out both;">
+                                <label class="flex items-center cursor-pointer group">
+                                    <input type="checkbox" class="hidden peer">
+                                    <span class="w-10 h-10 mr-4 border-2 border-gray-300 rounded-xl flex items-center justify-center checkmark group-hover:border-amber-500">
+                                        <i class="fas fa-check text-white transform scale-0 opacity-0 transition-transform duration-200"></i>
+                                    </span>
+                                    <div class="ingredient-visual bg-gradient-to-br from-white to-yellow-100 group-hover:scale-110">
+                                        🍬
+                                    </div>
+                                    <div class="item-text transition-opacity duration-300 flex-grow">
+                                        <div class="transition-colors duration-300">
+                                            <strong class="text-xl">120g</strong> 
+                                            <span class="text-amber-800 font-semibold">Azúcar</span>
+                                            <div class="text-sm text-gray-500 mt-1">La dulzura perfecta</div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </li>
+                            
+                            <li class="delay-4" style="animation: fadeInUp 0.8s ease-out both;">
+                                <label class="flex items-center cursor-pointer group">
+                                    <input type="checkbox" class="hidden peer">
+                                    <span class="w-10 h-10 mr-4 border-2 border-gray-300 rounded-xl flex items-center justify-center checkmark group-hover:border-amber-500">
+                                        <i class="fas fa-check text-white transform scale-0 opacity-0 transition-transform duration-200"></i>
+                                    </span>
+                                    <div class="ingredient-visual bg-gradient-to-br from-yellow-200 to-orange-200 group-hover:scale-110">
+                                        🥚
+                                    </div>
+                                    <div class="item-text transition-opacity duration-300 flex-grow">
+                                        <div class="transition-colors duration-300">
+                                            <strong class="text-xl">2</strong> 
+                                            <span class="text-amber-800 font-semibold">Huevos</span>
+                                            <div class="text-sm text-gray-500 mt-1">Para la estructura y esponjosidad</div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </li>
+                            
+                            <li class="delay-5" style="animation: fadeInUp 0.8s ease-out both;">
+                                <label class="flex items-center cursor-pointer group">
+                                    <input type="checkbox" class="hidden peer">
+                                    <span class="w-10 h-10 mr-4 border-2 border-gray-300 rounded-xl flex items-center justify-center checkmark group-hover:border-amber-500">
+                                        <i class="fas fa-check text-white transform scale-0 opacity-0 transition-transform duration-200"></i>
+                                    </span>
+                                    <div class="ingredient-visual bg-gradient-to-br from-blue-50 to-gray-100 group-hover:scale-110">
+                                        🌾
+                                    </div>
+                                    <div class="item-text transition-opacity duration-300 flex-grow">
+                                        <div class="transition-colors duration-300">
+                                            <strong class="text-xl">60g</strong> 
+                                            <span class="text-amber-800 font-semibold">Harina</span>
+                                            <div class="text-sm text-gray-500 mt-1">La base que une todo</div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </li>
+                            
+                            <li class="delay-6" style="animation: fadeInUp 0.8s ease-out both;">
+                                <label class="flex items-center cursor-pointer group">
+                                    <input type="checkbox" class="hidden peer">
+                                    <span class="w-10 h-10 mr-4 border-2 border-gray-300 rounded-xl flex items-center justify-center checkmark group-hover:border-amber-500">
+                                        <i class="fas fa-check text-white transform scale-0 opacity-0 transition-transform duration-200"></i>
+                                    </span>
+                                    <div class="ingredient-visual bg-gradient-to-br from-amber-200 to-yellow-300 group-hover:scale-110">
+                                        🥜
+                                    </div>
+                                    <div class="item-text transition-opacity duration-300 flex-grow">
+                                        <div class="transition-colors duration-300">
+                                            <span class="text-gray-600 font-semibold italic">Nueces picadas o chispas</span>
+                                            <div class="text-sm text-gray-500 mt-1">(Al gusto - para el toque especial)</div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+
+                        <!-- Oven Timer Section -->
+                        <div class="mt-10 text-center">
+                            <h3 class="font-heading text-2xl text-amber-900 mb-4">🔥 Cronómetro del Horno</h3>
+                            <div class="oven-timer mb-4" id="ovenTimer">
+                                <div class="oven-timer-text" id="timerDisplay">00:00</div>
+                            </div>
+                            <div class="flex justify-center gap-3">
+                                <button id="startTimer" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300">
+                                    <i class="fas fa-play mr-2"></i>Iniciar
+                                </button>
+                                <button id="pauseTimer" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300">
+                                    <i class="fas fa-pause mr-2"></i>Pausar
+                                </button>
+                                <button id="resetTimer" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300">
+                                    <i class="fas fa-stop mr-2"></i>Reset
+                                </button>
+                            </div>
+                            <div class="mt-4">
+                                <button id="set20MinTimer" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 animate-oven-glow">
+                                    <i class="fas fa-fire mr-2"></i>Hornear 20 min
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instructions Section Enhanced -->
+                    <div class="lg:col-span-2">
+                        <h2 class="font-heading text-4xl text-amber-900 mb-8 heading-decorated">¡Al Horno!</h2>
+                        
+                        <!-- Step Progress Indicator -->
+                        <div class="mb-8 bg-gray-100 rounded-full p-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-gray-600 px-4">Progreso:</span>
+                                <div class="flex space-x-2 flex-grow px-4">
+                                    <div class="step-progress-dot bg-gray-300 w-3 h-3 rounded-full transition-all duration-300" data-step="1"></div>
+                                    <div class="step-progress-dot bg-gray-300 w-3 h-3 rounded-full transition-all duration-300" data-step="2"></div>
+                                    <div class="step-progress-dot bg-gray-300 w-3 h-3 rounded-full transition-all duration-300" data-step="3"></div>
+                                    <div class="step-progress-dot bg-gray-300 w-3 h-3 rounded-full transition-all duration-300" data-step="4"></div>
+                                    <div class="step-progress-dot bg-gray-300 w-3 h-3 rounded-full transition-all duration-300" data-step="5"></div>
+                                    <div class="step-progress-dot bg-gray-300 w-3 h-3 rounded-full transition-all duration-300" data-step="6"></div>
+                                </div>
+                                <span id="stepCounter" class="text-sm font-bold text-amber-800 px-4">0/6</span>
+                            </div>
+                        </div>
+
+                        <ol class="space-y-8 text-lg text-gray-700">
+                            <!-- Enhanced Instruction Steps -->
+                            <li class="flex items-start delay-5" style="animation: fadeInUp 0.8s ease-out both;">
+                               <label class="flex items-start cursor-pointer group w-full">
+                                    <input type="checkbox" class="hidden peer" data-step="1">
+                                    <div class="step-container flex-shrink-0 relative">
+                                        <div class="step-circle w-16 h-16 text-white rounded-full flex items-center justify-center font-bold text-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                            1
+                                        </div>
+                                        <div class="absolute -top-3 -right-3 text-3xl opacity-0 peer-checked:opacity-100 transition-opacity duration-500">🔥</div>
+                                    </div>
+                                    <div class="flex-grow ml-6">
+                                        <div class="item-text transition-opacity duration-300">
+                                            <div class="flex items-center mb-3">
+                                                <h3 class="font-semibold text-xl text-amber-900 mr-3">Derretir el Chocolate Mágico</h3>
+                                                <div class="flex space-x-2">
+                                                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-semibold">🍫 Chocolate</span>
+                                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">🧈 Margarina</span>
+                                                </div>
+                                            </div>
+                                            <p class="text-gray-700 leading-relaxed">
+                                                En una olla a fuego bajo o en el microondas, derrite el <strong>chocolate semiamargo</strong> junto con la <strong>margarina</strong>. 
+                                                <span class="inline-block animate-melt">🍫</span> 
+                                                Revuelve hasta obtener una mezcla lisa y brillante. ¡La base perfecta está lista!
+                                            </p>
+                                            <div class="mt-3 flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                                                <span><strong>Tip:</strong> Si usas microondas, hazlo en intervalos de 30 segundos.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                               </label>
+                            </li>
+                            
+                            <li class="flex items-start delay-6" style="animation: fadeInUp 0.8s ease-out both;">
+                               <label class="flex items-start cursor-pointer group w-full">
+                                    <input type="checkbox" class="hidden peer" data-step="2">
+                                    <div class="step-container flex-shrink-0 relative">
+                                        <div class="step-circle w-16 h-16 text-white rounded-full flex items-center justify-center font-bold text-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                            2
+                                        </div>
+                                        <div class="absolute -top-3 -right-3 text-3xl opacity-0 peer-checked:opacity-100 transition-opacity duration-500">🥚</div>
+                                    </div>
+                                    <div class="flex-grow ml-6">
+                                        <div class="item-text transition-opacity duration-300">
+                                            <div class="flex items-center mb-3">
+                                                <h3 class="font-semibold text-xl text-amber-900 mr-3">Incorporar los Huevos</h3>
+                                                <div class="flex space-x-2">
+                                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">🥚 Uno a uno</span>
+                                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">🥄 Integrar bien</span>
+                                                </div>
+                                            </div>
+                                            <p class="text-gray-700 leading-relaxed">
+                                                Cuando el chocolate esté derretido, agrega los <strong>huevos uno por uno</strong>. 
+                                                <span class="inline-block animate-bubble">🥚</span>
+                                                Integra completamente cada huevo antes de agregar el siguiente. ¡La textura se vuelve sedosa!
+                                            </p>
+                                            <div class="mt-3 p-3 bg-orange-50 border-l-4 border-orange-400 rounded">
+                                                <div class="flex items-center text-sm text-orange-700">
+                                                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                                                    <span><strong>Importante:</strong> Los huevos deben estar a temperatura ambiente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                               </label>
+                            </li>
+
+                            <li class="flex items-start delay-7" style="animation: fadeInUp 0.8s ease-out both;">
+                               <label class="flex items-start cursor-pointer group w-full">
+                                    <input type="checkbox" class="hidden peer" data-step="3">
+                                    <div class="step-container flex-shrink-0 relative">
+                                        <div class="step-circle w-16 h-16 text-white rounded-full flex items-center justify-center font-bold text-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                            3
+                                        </div>
+                                        <div class="absolute -top-3 -right-3 text-3xl opacity-0 peer-checked:opacity-100 transition-opacity duration-500">🍬</div>
+                                    </div>
+                                    <div class="flex-grow ml-6">
+                                        <div class="item-text transition-opacity duration-300">
+                                            <div class="flex items-center mb-3">
+                                                <h3 class="font-semibold text-xl text-amber-900 mr-3">La Dulzura Perfecta</h3>
+                                                <div class="flex space-x-2">
+                                                    <span class="bg-white text-gray-800 px-3 py-1 rounded-full text-sm font-semibold border">🍬 Azúcar</span>
+                                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">✨ Homogéneo</span>
+                                                </div>
+                                            </div>
+                                            <p class="text-gray-700 leading-relaxed">
+                                                Incorpora el <strong>azúcar</strong> y mezcla hasta obtener una 
+                                                <span class="font-bold text-amber-900 underline decoration-wavy decoration-amber-500 tooltip">
+                                                    mezcla homogénea.
+                                                    <span class="tooltip-text">
+                                                        <strong>🌟 ¡Perfecta integración!</strong><br>
+                                                        La mezcla debe verse brillante y sin grumos de azúcar. 
+                                                        Este es el momento donde se forma la textura característica del brownie. ✨
+                                                    </span>
+                                                </span>
+                                                <i class="fas fa-info-circle text-amber-500 ml-1 animate-bounce-gentle"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                               </label>
+                            </li>
+
+                            <li class="flex items-start delay-8" style="animation: fadeInUp 0.8s ease-out both;">
+                               <label class="flex items-start cursor-pointer group w-full">
+                                    <input type="checkbox" class="hidden peer" data-step="4">
+                                    <div class="step-container flex-shrink-0 relative">
+                                        <div class="step-circle w-16 h-16 text-white rounded-full flex items-center justify-center font-bold text-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                            4
+                                        </div>
+                                        <div class="absolute -top-3 -right-3 text-3xl opacity-0 peer-checked:opacity-100 transition-opacity duration-500">🌾</div>
+                                    </div>
+                                    <div class="flex-grow ml-6">
+                                        <div class="item-text transition-opacity duration-300">
+                                            <div class="flex items-center mb-3">
+                                                <h3 class="font-semibold text-xl text-amber-900 mr-3">La Estructura Final</h3>
+                                                <div class="flex space-x-2">
+                                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">🌾 Harina</span>
+                                                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-semibold">🥜 Extras</span>
+                                                </div>
+                                            </div>
+                                            <p class="text-gray-700 leading-relaxed">
+                                                Agrega la <strong>harina</strong> tamizada y las <strong>nueces picadas o chispas</strong> al gusto. 
+                                                <span class="inline-block animate-wiggle">🌾</span> 
+                                                Mezcla con movimientos envolventes hasta integrar. ¡No mezcles de más!
+                                            </p>
+                                            <div class="mt-3 p-3 bg-blue-50 border-l-4 border-blue-400 rounded">
+                                                <div class="flex items-center text-sm text-blue-700">
+                                                    <i class="fas fa-info-circle mr-2"></i>
+                                                    <span><strong>Secreto:</strong> Mezclar poco mantiene los brownies tiernos</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                               </label>
+                            </li>
+
+                            <li class="flex items-start delay-8" style="animation: fadeInUp 0.8s ease-out both;">
+                               <label class="flex items-start cursor-pointer group w-full">
+                                    <input type="checkbox" class="hidden peer" data-step="5">
+                                    <div class="step-container flex-shrink-0 relative">
+                                        <div class="step-circle w-16 h-16 text-white rounded-full flex items-center justify-center font-bold text-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                            5
+                                        </div>
+                                        <div class="absolute -top-3 -right-3 text-3xl opacity-0 peer-checked:opacity-100 transition-opacity duration-500">🔥</div>
+                                    </div>
+                                    <div class="flex-grow ml-6">
+                                        <div class="item-text transition-opacity duration-300">
+                                            <div class="flex items-center mb-3">
+                                                <h3 class="font-semibold text-xl text-amber-900 mr-3">¡Al Horno!</h3>
+                                                <div class="flex space-x-2">
+                                                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">🔥 180°C</span>
+                                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">⏰ 20 min</span>
+                                                </div>
+                                            </div>
+                                            <p class="text-gray-700 leading-relaxed">
+                                                Vierte la mezcla en el molde engrasado y enharinado. 
+                                                <span class="inline-block animate-oven-glow">🔥</span>
+                                                Hornea a <strong>180°C por 20 minutos</strong> o hasta que el palito de madera salga limpio.
+                                            </p>
+                                            
+                                            <!-- Oven Temperature Indicator -->
+                                            <div class="mt-4 bg-gradient-to-r from-red-100 to-orange-100 p-4 rounded-lg border-l-4 border-red-400">
+                                                <div class="flex items-center justify-between">
+                                                    <div class="flex items-center text-sm text-red-700">
+                                                        <i class="fas fa-thermometer-half mr-2"></i>
+                                                        <span>Precalienta tu horno a 180°C (350°F)</span>
+                                                    </div>
+                                                    <button id="preheatReminder" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold transition-all duration-300 oven-preheat">
+                                                        <i class="fas fa-fire mr-1"></i>Precalentar
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                               </label>
+                            </li>
+
+                            <li class="flex items-start delay-8" style="animation: fadeInUp 0.8s ease-out both;">
+                               <label class="flex items-start cursor-pointer group w-full">
+                                    <input type="checkbox" class="hidden peer" data-step="6">
+                                    <div class="step-container flex-shrink-0 relative">
+                                        <div class="step-circle w-16 h-16 text-white rounded-full flex items-center justify-center font-bold text-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                            6
+                                        </div>
+                                        <div class="absolute -top-3 -right-3 text-3xl opacity-0 peer-checked:opacity-100 transition-opacity duration-500">🎨</div>
+                                    </div>
+                                    <div class="flex-grow ml-6">
+                                        <div class="item-text transition-opacity duration-300">
+                                            <div class="flex items-center mb-3">
+                                                <h3 class="font-semibold text-xl text-amber-900 mr-3">El Toque Final</h3>
+                                                <div class="flex space-x-2">
+                                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">❄️ Enfriar</span>
+                                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">✨ Decorar</span>
+                                                </div>
+                                            </div>
+                                            <p class="text-gray-700 leading-relaxed">
+                                                Deja enfriar completamente antes de cortar. 
+                                                <span class="inline-block animate-steam">💨</span>
+                                                <strong>Porciona</strong> en cuadrados perfectos y <strong>decora</strong> con manjar, chocolate derretido o tu topping favorito.
+                                            </p>
+                                            
+                                            <!-- Topping Options -->
+                                            <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+                                                <div class="topping-option bg-gradient-to-br from-amber-200 to-amber-400 p-3 rounded-lg text-center cursor-pointer hover:scale-105 transition-transform duration-300" onclick="selectTopping(this, 'Manjar Blanco')">
+                                                    <div class="text-2xl mb-1">🍯</div>
+                                                    <div class="text-xs font-semibold">Manjar</div>
+                                                </div>
+                                                <div class="topping-option bg-gradient-to-br from-amber-800 to-amber-900 p-3 rounded-lg text-center cursor-pointer hover:scale-105 transition-transform duration-300 text-white" onclick="selectTopping(this, 'Chocolate Derretido')">
+                                                    <div class="text-2xl mb-1">🍫</div>
+                                                    <div class="text-xs font-semibold">Chocolate</div>
+                                                </div>
+                                                <div class="topping-option bg-gradient-to-br from-green-200 to-green-400 p-3 rounded-lg text-center cursor-pointer hover:scale-105 transition-transform duration-300" onclick="selectTopping(this, 'Nueces Picadas')">
+                                                    <div class="text-2xl mb-1">🥜</div>
+                                                    <div class="text-xs font-semibold">Nueces</div>
+                                                </div>
+                                                <div class="topping-option bg-gradient-to-br from-pink-200 to-pink-400 p-3 rounded-lg text-center cursor-pointer hover:scale-105 transition-transform duration-300" onclick="selectTopping(this, 'Azúcar Glass')">
+                                                    <div class="text-2xl mb-1">✨</div>
+                                                    <div class="text-xs font-semibold">Azúcar Glass</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div id="selectedToppings" class="mt-3 hidden">
+                                                <div class="bg-green-50 border-l-4 border-green-400 p-3 rounded">
+                                                    <div class="flex items-center text-sm text-green-700">
+                                                        <i class="fas fa-check-circle mr-2"></i>
+                                                        <span>Toppings seleccionados: <strong id="toppingsList"></strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                               </label>
+                            </li>
+                        </ol>
+
+                        <!-- Completion Celebration -->
+                        <div id="completionCelebration" class="hidden mt-10 text-center animate-fadeInUp">
+                            <div class="bg-gradient-to-r from-amber-600 to-orange-600 text-white p-8 rounded-2xl shadow-2xl">
+                                <div class="text-6xl mb-4 animate-heartbeat">🏆</div>
+                                <h3 class="font-heading text-3xl mb-3">¡Felicitaciones, Maestro/a Panadero/a! 👨‍🍳🍫</h3>
+                                <p class="text-xl mb-4">Has dominado el arte de los brownies perfectos. ¡Tus cuadrados de felicidad están listos para disfrutar!</p>
+                                <button id="shareRecipe" class="bg-white text-amber-600 hover:bg-gray-100 px-6 py-3 rounded-full font-bold text-lg transition-all duration-300 animate-wiggle">
+                                    <i class="fas fa-share mr-2"></i>
+                                    Compartir la Receta
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Storage Section Enhanced -->
+                <div class="mt-16 border-t-4 border-double border-amber-300 pt-10 text-center" style="animation: fadeIn 1s 1.8s ease-out both;">
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-100 p-8 rounded-2xl shadow-lg brownie-texture">
+                        <h3 class="font-heading text-4xl text-amber-900 mb-4">
+                            <i class="fas fa-gem text-amber-500 mr-3 animate-wiggle"></i>
+                            ¡Conserva tu Obra Maestra!
+                            <i class="fas fa-gem text-amber-500 ml-3 animate-wiggle"></i>
+                        </h3>
+                        <p class="text-amber-700 mt-4 text-xl leading-relaxed">
+                            Guarda tus brownies en un recipiente hermético a temperatura ambiente. 
+                            <strong>Se mantienen perfectos hasta 5 días</strong>, aunque seguramente desaparecerán mucho antes.
+                        </p>
+                        
+                        <!-- Storage Tips -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                            <div class="bg-white p-6 rounded-xl shadow-md animate-wiggle">
+                                <div class="text-4xl mb-3">🌡️</div>
+                                <h4 class="font-semibold text-lg text-gray-800 mb-2">Temperatura</h4>
+                                <p class="text-gray-600 text-sm">Ambiente (18-22°C) para textura óptima</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-md animate-wiggle" style="animation-delay: 0.2s;">
+                                <div class="text-4xl mb-3">📦</div>
+                                <h4 class="font-semibold text-lg text-gray-800 mb-2">Recipiente</h4>
+                                <p class="text-gray-600 text-sm">Hermético para mantener la humedad</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-md animate-wiggle" style="animation-delay: 0.4s;">
+                                <div class="text-4xl mb-3">📅</div>
+                                <h4 class="font-semibold text-lg text-gray-800 mb-2">Duración</h4>
+                                <p class="text-gray-600 text-sm">5 días de perfección chocolatosa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rating and Feedback Section -->
+                <div class="mt-12 text-center">
+                    <h3 class="font-heading text-2xl text-gray-700 mb-6">¿Cómo quedaron tus brownies?</h3>
+                    <div class="flex justify-center space-x-2 mb-4" id="recipeRating">
+                        <i class="fas fa-star text-4xl text-gray-300 cursor-pointer hover:text-amber-500 transition-colors duration-300" data-rating="1"></i>
+                        <i class="fas fa-star text-4xl text-gray-300 cursor-pointer hover:text-amber-500 transition-colors duration-300" data-rating="2"></i>
+                        <i class="fas fa-star text-4xl text-gray-300 cursor-pointer hover:text-amber-500 transition-colors duration-300" data-rating="3"></i>
+                        <i class="fas fa-star text-4xl text-gray-300 cursor-pointer hover:text-amber-500 transition-colors duration-300" data-rating="4"></i>
+                        <i class="fas fa-star text-4xl text-gray-300 cursor-pointer hover:text-amber-500 transition-colors duration-300" data-rating="5"></i>
+                    </div>
+                    <div id="ratingMessage" class="text-lg font-semibold text-amber-600 hidden animate-fadeInUp"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Shopping List -->
+    <div id="shoppingModal" class="fixed inset-0 modal hidden z-50 flex items-center justify-center p-4">
+        <div class="modal-content w-full max-w-md p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-heading text-2xl text-gray-800">🛒 Lista de Compras</h3>
+                <button onclick="closeModal('shoppingModal')" class="text-gray-500 hover:text-gray-700 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="space-y-3">
+                <div class="flex items-center justify-between p-3 bg-yellow-50 rounded-lg border">
+                    <span>🧈 Margarina - 100g</span>
+                    <input type="checkbox" class="shopping-item">
+                </div>
+                <div class="flex items-center justify-between p-3 bg-amber-50 rounded-lg border">
+                    <span>🍫 Chocolate semiamargo - 100g</span>
+                    <input type="checkbox" class="shopping-item">
+                </div>
+                <div class="flex items-center justify-between p-3 bg-white rounded-lg border">
+                    <span>🍬 Azúcar - 120g</span>
+                    <input type="checkbox" class="shopping-item">
+                </div>
+                <div class="flex items-center justify-between p-3 bg-orange-50 rounded-lg border">
+                    <span>🥚 Huevos - 2 unidades</span>
+                    <input type="checkbox" class="shopping-item">
+                </div>
+                <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg border">
+                    <span>🌾 Harina - 60g</span>
+                    <input type="checkbox" class="shopping-item">
+                </div>
+                <div class="flex items-center justify-between p-3 bg-amber-50 rounded-lg border">
+                    <span>🥜 Nueces/chispas (opcional)</span>
+                    <input type="checkbox" class="shopping-item">
+                </div>
+            </div>
+            <div class="mt-6 text-center">
+                <button onclick="downloadShoppingList()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                    <i class="fas fa-download mr-2"></i>Descargar Lista
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Toothpick Test Demo -->
+    <div id="toothpickModal" class="fixed inset-0 modal hidden z-50 flex items-center justify-center p-4">
+        <div class="modal-content w-full max-w-lg p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-heading text-2xl text-gray-800">🍢 Prueba del Palito</h3>
+                <button onclick="closeModal('toothpickModal')" class="text-gray-500 hover:text-gray-700 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="text-center">
+                <div class="mb-6">
+                    <div class="bg-amber-100 p-6 rounded-lg mb-4">
+                        <div class="text-6xl mb-4">🍢</div>
+                        <div class="text-lg font-semibold text-amber-800">Inserta el palito en el centro</div>
+                    </div>
+                </div>
+                <div class="text-left bg-blue-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-lg mb-2">¿Cómo interpretar el resultado?</h4>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 text-xl">✅</span>
+                            <span><strong>Listo:</strong> El palito sale con pocas migas húmedas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-2 text-xl">⚠️</span>
+                            <span><strong>Casi listo:</strong> Sale con masa líquida - hornear 3-5 min más</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2 text-xl">❌</span>
+                            <span><strong>Demasiado:</strong> Sale completamente limpio - pueden estar secos</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Element for Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <script>
+        // Global variables for functionality
+        let timerInterval;
+        let timerMinutes = 0;
+        let timerSeconds = 0;
+        let isTimerRunning = false;
+        let completedSteps = 0;
+        let selectedToppings = [];
+        let currentStep = 0;
+        let bakingMode = false;
+
+        // Initialize the recipe when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeRecipe();
+        });
+
+        function initializeRecipe() {
+            setupStepTracking();
+            setupTimerFunctionality();
+            setupMusicToggle();
+            setupProgressTracking();
+            setupRatingSystem();
+            setupBakingMode();
+            playWelcomeAnimation();
+        }
+
+        // Welcome animation with chocolate chips
+        function playWelcomeAnimation() {
+            setTimeout(() => {
+                createChocolateChips();
+            }, 2000);
+        }
+
+        function createChocolateChips() {
+            const colors = ['#8B4513', '#A0522D', '#5D4037', '#3E2723'];
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const chip = document.createElement('div');
+                    chip.style.cssText = `
+                        position: fixed;
+                        top: -10px;
+                        left: ${Math.random() * 100}%;
+                        width: ${4 + Math.random() * 6}px;
+                        height: ${4 + Math.random() * 6}px;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        border-radius: 50%;
+                        z-index: 1000;
+                        pointer-events: none;
+                        animation: confetti 4s ease-out forwards;
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    `;
+                    document.body.appendChild(chip);
+                    setTimeout(() => chip.remove(), 4000);
+                }, i * 100);
+            }
+        }
+
+        // Step tracking functionality
+        function setupStepTracking() {
+            const stepCheckboxes = document.querySelectorAll('input[data-step]');
+            stepCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    handleStepChange(this);
+                });
+            });
+
+            // Ingredient checkboxes
+            const ingredientCheckboxes = document.querySelectorAll('.item-text input[type="checkbox"]');
+            ingredientCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateProgress);
+            });
+        }
+
+        function handleStepChange(checkbox) {
+            const stepNumber = parseInt(checkbox.dataset.step);
+            const stepDot = document.querySelector(`.step-progress-dot[data-step="${stepNumber}"]`);
+            
+            if (checkbox.checked) {
+                completedSteps++;
+                stepDot.classList.remove('bg-gray-300');
+                stepDot.classList.add('bg-amber-500', 'animate-bounce-gentle');
+                
+                // Play completion sound (visual feedback)
+                playStepCompletionEffect(stepNumber);
+                
+                if (bakingMode) {
+                    moveToNextStep(stepNumber);
+                }
+            } else {
+                completedSteps--;
+                stepDot.classList.remove('bg-amber-500', 'animate-bounce-gentle');
+                stepDot.classList.add('bg-gray-300');
+            }
+            
+            updateStepCounter();
+            updateProgress();
+            checkRecipeCompletion();
+        }
+
+        function playStepCompletionEffect(stepNumber) {
+            // Create celebration particles
+            const stepElement = document.querySelector(`input[data-step="${stepNumber}"]`).closest('li');
+            const rect = stepElement.getBoundingClientRect();
+            
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.style.cssText = `
+                        position: fixed;
+                        top: ${rect.top + 30}px;
+                        left: ${rect.left + 50 + Math.random() * 100}px;
+                        width: 6px;
+                        height: 6px;
+                        background: #8B4513;
+                        border-radius: 50%;
+                        z-index: 1000;
+                        pointer-events: none;
+                        animation: confetti 2s ease-out forwards;
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    `;
+                    document.body.appendChild(particle);
+                    setTimeout(() => particle.remove(), 2000);
+                }, i * 50);
+            }
+        }
+
+        function updateStepCounter() {
+            document.getElementById('stepCounter').textContent = `${completedSteps}/6`;
+        }
+
+        function updateProgress() {
+            const totalItems = document.querySelectorAll('input[type="checkbox"]').length;
+            const checkedItems = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const progress = (checkedItems / totalItems) * 100;
+            
+            document.getElementById('progressBar').style.width = `${progress}%`;
+        }
+
+        function checkRecipeCompletion() {
+            if (completedSteps === 6) {
+                showCompletionCelebration();
+            }
+        }
+
+        function showCompletionCelebration() {
+            const celebration = document.getElementById('completionCelebration');
+            celebration.classList.remove('hidden');
+            celebration.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Create massive brownie celebration
+            createMassiveBrownieCelebration();
+            
+            // Play completion effects
+            setTimeout(() => {
+                createBrownieFireworks();
+            }, 1000);
+        }
+
+        function createMassiveBrownieCelebration() {
+            const colors = ['#8B4513', '#A0522D', '#5D4037', '#D2691E', '#CD853F'];
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => {
+                    const brownie = document.createElement('div');
+                    brownie.style.cssText = `
+                        position: fixed;
+                        top: -10px;
+                        left: ${Math.random() * 100}%;
+                        width: ${8 + Math.random() * 12}px;
+                        height: ${6 + Math.random() * 8}px;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        border-radius: 2px;
+                        z-index: 1000;
+                        pointer-events: none;
+                        animation: confetti 5s linear forwards;
+                        transform: rotate(${Math.random() * 360}deg);
+                        box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+                    `;
+                    document.body.appendChild(brownie);
+                    setTimeout(() => brownie.remove(), 5000);
+                }, i * 40);
+            }
+        }
+
+        function createBrownieFireworks() {
+            const colors = ['#8B4513', '#A0522D', '#D2691E'];
+            for (let i = 0; i < 4; i++) {
+                setTimeout(() => {
+                    const x = 25 + Math.random() * 50;
+                    const y = 25 + Math.random() * 50;
+                    
+                    for (let j = 0; j < 12; j++) {
+                        const particle = document.createElement('div');
+                        particle.style.cssText = `
+                            position: fixed;
+                            top: ${y}%;
+                            left: ${x}%;
+                            width: 6px;
+                            height: 6px;
+                            background: ${colors[Math.floor(Math.random() * colors.length)]};
+                            border-radius: 50%;
+                            z-index: 1000;
+                            pointer-events: none;
+                            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                        `;
+                        
+                        const angle = (j / 12) * 2 * Math.PI;
+                        const velocity = 40 + Math.random() * 25;
+                        
+                        particle.animate([
+                            { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                            { 
+                                transform: `translate(${Math.cos(angle) * velocity}px, ${Math.sin(angle) * velocity}px) scale(0)`, 
+                                opacity: 0 
+                            }
+                        ], {
+                            duration: 1200,
+                            easing: 'ease-out'
+                        });
+                        
+                        document.body.appendChild(particle);
+                        setTimeout(() => particle.remove(), 1200);
+                    }
+                }, i * 400);
+            }
+        }
+
+        // Timer functionality
+        function setupTimerFunctionality() {
+            document.getElementById('startTimer').addEventListener('click', startTimer);
+            document.getElementById('pauseTimer').addEventListener('click', pauseTimer);
+            document.getElementById('resetTimer').addEventListener('click', resetTimer);
+            document.getElementById('set20MinTimer').addEventListener('click', set20MinTimer);
+        }
+
+        function startTimer() {
+            if (!isTimerRunning) {
+                isTimerRunning = true;
+                timerInterval = setInterval(updateTimer, 1000);
+                document.getElementById('startTimer').classList.add('opacity-50');
+                document.getElementById('ovenTimer').classList.add('animate-oven-glow');
+            }
+        }
+
+        function pauseTimer() {
+            if (isTimerRunning) {
+                isTimerRunning = false;
+                clearInterval(timerInterval);
+                document.getElementById('startTimer').classList.remove('opacity-50');
+                document.getElementById('ovenTimer').classList.remove('animate-oven-glow');
+            }
+        }
+
+        function resetTimer() {
+            pauseTimer();
+            timerMinutes = 0;
+            timerSeconds = 0;
+            updateTimerDisplay();
+        }
+
+        function set20MinTimer() {
+            resetTimer();
+            timerMinutes = 20;
+            timerSeconds = 0;
+            updateTimerDisplay();
+            showNotification('⏰ Timer configurado para 20 minutos de horneado', 'info');
+            
+            // Auto-start countdown
+            setTimeout(() => {
+                if (!isTimerRunning) {
+                    startCountdown();
+                }
+            }, 1000);
+        }
+
+        function startCountdown() {
+            if (!isTimerRunning && (timerMinutes > 0 || timerSeconds > 0)) {
+                isTimerRunning = true;
+                timerInterval = setInterval(updateCountdown, 1000);
+                document.getElementById('ovenTimer').classList.add('animate-oven-glow');
+                showNotification('🔥 ¡Countdown iniciado! Brownies horneándose...', 'info');
+            }
+        }
+
+        function updateTimer() {
+            timerSeconds++;
+            if (timerSeconds >= 60) {
+                timerMinutes++;
+                timerSeconds = 0;
+            }
+            updateTimerDisplay();
+        }
+
+        function updateCountdown() {
+            if (timerSeconds > 0) {
+                timerSeconds--;
+            } else if (timerMinutes > 0) {
+                timerMinutes--;
+                timerSeconds = 59;
+            } else {
+                // Timer finished
+                pauseTimer();
+                showNotification('🔔 ¡Tiempo terminado! Revisa tus brownies con el palito', 'success');
+                createBrownieAlarm();
+                return;
+            }
+            updateTimerDisplay();
+        }
+
+        function createBrownieAlarm() {
+            // Visual alarm effect
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const alarm = document.createElement('div');
+                    alarm.style.cssText = `
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 3rem;
+                        z-index: 1000;
+                        pointer-events: none;
+                        animation: heartbeat 0.5s ease-in-out;
+                    `;
+                    alarm.textContent = '🔔';
+                    document.body.appendChild(alarm);
+                    setTimeout(() => alarm.remove(), 500);
+                }, i * 100);
+            }
+        }
+
+        function updateTimerDisplay() {
+            const display = document.getElementById('timerDisplay');
+            const mins = timerMinutes.toString().padStart(2, '0');
+            const secs = timerSeconds.toString().padStart(2, '0');
+            display.textContent = `${mins}:${secs}`;
+        }
+
+        // Music toggle functionality
+        function setupMusicToggle() {
+            const musicButton = document.getElementById('musicToggle');
+            
+            musicButton.addEventListener('click', function() {
+                this.classList.toggle('animate-heartbeat');
+                if (this.classList.contains('animate-heartbeat')) {
+                    this.innerHTML = '<i class="fas fa-music text-xl"></i><div class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>';
+                    showMusicVisualization();
+                } else {
+                    this.innerHTML = '<i class="fas fa-music text-xl"></i>';
+                    hideMusicVisualization();
+                }
+            });
+        }
+
+        function showMusicVisualization() {
+            // Create animated music bars
+            const musicBars = document.createElement('div');
+            musicBars.id = 'musicBars';
+            musicBars.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 80px;
+                display: flex;
+                align-items: flex-end;
+                gap: 2px;
+                z-index: 1000;
+                pointer-events: none;
+            `;
+            
+            for (let i = 0; i < 5; i++) {
+                const bar = document.createElement('div');
+                bar.style.cssText = `
+                    width: 4px;
+                    height: ${8 + Math.random() * 16}px;
+                    background: #8B4513;
+                    border-radius: 2px;
+                    animation: steam 0.6s ease-in-out infinite;
+                    animation-delay: ${i * 0.1}s;
+                `;
+                musicBars.appendChild(bar);
+            }
+            
+            document.body.appendChild(musicBars);
+        }
+
+        function hideMusicVisualization() {
+            const musicBars = document.getElementById('musicBars');
+            if (musicBars) {
+                musicBars.remove();
+            }
+        }
+
+        // Baking mode functionality
+        function setupBakingMode() {
+            const bakingBtn = document.getElementById('bakingModeBtn');
+            bakingBtn.addEventListener('click', toggleBakingMode);
+        }
+
+        function toggleBakingMode() {
+            bakingMode = !bakingMode;
+            const btn = document.getElementById('bakingModeBtn');
+            
+            if (bakingMode) {
+                btn.innerHTML = '<i class="fas fa-fire mr-3"></i>🔥 Modo Horneado Activo';
+                btn.classList.add('oven-preheat');
+                document.body.classList.add('baking-mode');
+                startGuidedBaking();
+            } else {
+                btn.innerHTML = '<i class="fas fa-fire mr-3"></i>Activar Modo Horneado<div class="inline-block ml-2"><div class="steam-particle inline-block w-1 bg-white" style="height: 8px; animation-delay: 0s;"></div><div class="steam-particle inline-block w-1 bg-white" style="height: 10px; animation-delay: 0.3s;"></div><div class="steam-particle inline-block w-1 bg-white" style="height: 6px; animation-delay: 0.6s;"></div></div>';
+                btn.classList.remove('oven-preheat');
+                document.body.classList.remove('baking-mode');
+                stopGuidedBaking();
+            }
+        }
+
+        function startGuidedBaking() {
+            currentStep = 1;
+            highlightCurrentStep();
+            showBakingTips();
+        }
+
+        function stopGuidedBaking() {
+            const steps = document.querySelectorAll('.step-circle');
+            steps.forEach(step => step.classList.remove('current-step'));
+        }
+
+        function highlightCurrentStep() {
+            const steps = document.querySelectorAll('.step-circle');
+            steps.forEach(step => step.classList.remove('current-step'));
+            
+            const currentStepElement = document.querySelector(`input[data-step="${currentStep}"]`);
+            if (currentStepElement) {
+                const stepCircle = currentStepElement.closest('li').querySelector('.step-circle');
+                stepCircle.classList.add('current-step');
+                currentStepElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function moveToNextStep(completedStep) {
+            if (completedStep === currentStep && currentStep < 6) {
+                currentStep++;
+                setTimeout(() => {
+                    highlightCurrentStep();
+                }, 1000);
+            }
+        }
+
+        function showBakingTips() {
+            const tips = [
+                "🔥 Precalienta siempre el horno antes de hornear",
+                "🍫 No mezcles demasiado la masa para mantener textura tierna",
+                "⏰ El tiempo puede variar según tu horno",
+                "🍢 La prueba del palito es tu mejor aliado",
+                "❄️ Deja enfriar completamente antes de cortar"
+            ];
+            
+            let tipIndex = 0;
+            const showTip = () => {
+                if (bakingMode) {
+                    showNotification(tips[tipIndex % tips.length], 'info');
+                    tipIndex++;
+                    setTimeout(showTip, 12000);
+                }
+            };
+            
+            setTimeout(showTip, 3000);
+        }
+
+        // Progress tracking
+        function setupProgressTracking() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateProgress);
+            });
+        }
+
+        // Rating system
+        function setupRatingSystem() {
+            const stars = document.querySelectorAll('#recipeRating i');
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    setRating(rating);
+                });
+                
+                star.addEventListener('mouseenter', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    highlightStars(rating);
+                });
+            });
+            
+            document.getElementById('recipeRating').addEventListener('mouseleave', function() {
+                const currentRating = parseInt(this.dataset.currentRating || 0);
+                highlightStars(currentRating);
+            });
+        }
+
+        function highlightStars(count) {
+            const stars = document.querySelectorAll('#recipeRating i');
+            stars.forEach((star, index) => {
+                if (index < count) {
+                    star.classList.remove('text-gray-300');
+                    star.classList.add('text-amber-500');
+                } else {
+                    star.classList.remove('text-amber-500');
+                    star.classList.add('text-gray-300');
+                }
+            });
+        }
+
+        function setRating(rating) {
+            const ratingContainer = document.getElementById('recipeRating');
+            const messageElement = document.getElementById('ratingMessage');
+            
+            ratingContainer.dataset.currentRating = rating;
+            highlightStars(rating);
+            
+            const messages = [
+                "¡Sigamos practicando! 💪",
+                "¡Buen intento! 👍",
+                "¡Muy buenos brownies! 😊",
+                "¡Excelente trabajo! ⭐",
+                "¡Perfectos! ¡Eres un maestro del chocolate! 👨‍🍳🏆"
+            ];
+            
+            messageElement.textContent = messages[rating - 1];
+            messageElement.classList.remove('hidden');
+            
+            if (rating >= 4) {
+                createChocolateChips();
+            }
+        }
+
+        // Topping selection
+        function selectTopping(element, toppingName) {
+            element.classList.toggle('ring-4');
+            element.classList.toggle('ring-amber-500');
+            
+            const index = selectedToppings.indexOf(toppingName);
+            if (index > -1) {
+                selectedToppings.splice(index, 1);
+            } else {
+                selectedToppings.push(toppingName);
+            }
+            
+            updateSelectedToppings();
+        }
+
+        function updateSelectedToppings() {
+            const container = document.getElementById('selectedToppings');
+            const list = document.getElementById('toppingsList');
+            
+            if (selectedToppings.length > 0) {
+                container.classList.remove('hidden');
+                list.textContent = selectedToppings.join(', ');
+            } else {
+                container.classList.add('hidden');
+            }
+        }
+
+        // Modal functions
+        function showToothpickDemo() {
+            document.getElementById('toothpickModal').classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Shopping list functionality
+        document.getElementById('shoppingListBtn').addEventListener('click', function() {
+            document.getElementById('shoppingModal').classList.remove('hidden');
+        });
+
+        function downloadShoppingList() {
+            const items = [
+                '🧈 Margarina - 100g',
+                '🍫 Chocolate semiamargo - 100g',
+                '🍬 Azúcar - 120g',
+                '🥚 Huevos - 2 unidades',
+                '🌾 Harina - 60g',
+                '🥜 Nueces/chispas (opcional)'
+            ];
+            
+            const text = '🛒 Lista de Compras - Brownies de Chocolate\n\n' + items.join('\n') + '\n\n🍫 ¡Para hacer los brownies más deliciosos del mundo!';
+            
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'lista-compras-brownies.txt';
+            a.click();
+            
+            URL.revokeObjectURL(url);
+            showNotification('¡Lista descargada! 📱', 'success');
+        }
+
+        // Preheat reminder functionality
+        document.getElementById('preheatReminder').addEventListener('click', function() {
+            this.textContent = '🔥 Precalentando...';
+            this.classList.add('animate-oven-glow');
+            
+            setTimeout(() => {
+                this.textContent = '✅ Listo';
+                this.classList.remove('animate-oven-glow', 'oven-preheat');
+                this.classList.add('bg-green-500', 'hover:bg-green-600');
+                showNotification('🔥 ¡Horno precalentado a 180°C!', 'success');
+            }, 3000);
+        });
+
+        // Share functionality
+        document.getElementById('shareRecipe').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: '🍫 Receta de Brownies de Chocolate',
+                    text: '¡Mira esta receta increíble de brownies de chocolate que hice! Perfecta para los amantes del chocolate 🍫',
+                    url: window.location.href
+                });
+            } else {
+                const text = '🍫 ¡Mira esta receta increíble de brownies de chocolate! Perfecta para los amantes del chocolate 🍫\n\n' + window.location.href;
+                navigator.clipboard.writeText(text).then(() => {
+                    showNotification('¡Enlace copiado al portapapeles! 📋', 'success');
+                });
+            }
+        });
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            const bgColor = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-amber-500';
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 80px;
+                right: 20px;
+                ${bgColor.replace('bg-', 'background-color: ').replace('-500', ': rgb(139, 69, 19)')};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 1000;
+                font-weight: 600;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                max-width: 300px;
+                word-wrap: break-word;
+            `;
+            
+            if (type === 'success') {
+                notification.style.backgroundColor = '#22c55e';
+            } else if (type === 'error') {
+                notification.style.backgroundColor = '#ef4444';
+            } else {
+                notification.style.backgroundColor = '#8B4513';
+            }
+            
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Slide in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Slide out and remove
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 4000);
+        }
+
+        // Click outside to close modals
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.add('hidden');
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const openModal = document.querySelector('.modal:not(.hidden)');
+                if (openModal) {
+                    openModal.classList.add('hidden');
+                }
+            }
+            
+            if (event.ctrlKey || event.metaKey) {
+                switch(event.key) {
+                    case ' ': // Ctrl+Space for timer
+                        event.preventDefault();
+                        if (isTimerRunning) {
+                            pauseTimer();
+                        } else {
+                            startTimer();
+                        }
+                        break;
+                    case 'r': // Ctrl+R for reset timer
+                        if (event.shiftKey) {
+                            event.preventDefault();
+                            resetTimer();
+                        }
+                        break;
+                    case 'b': // Ctrl+B for baking mode
+                        event.preventDefault();
+                        toggleBakingMode();
+                        break;
+                }
+            }
+        });
+
+        // Add some extra brownie touches
+        function addBrownieTouches() {
+            // Random chocolate chips that appear and disappear
+            setInterval(() => {
+                if (Math.random() < 0.08) { // 8% chance every second
+                    createFloatingChocolateChip();
+                }
+            }, 1000);
+        }
+
+        function createFloatingChocolateChip() {
+            const chips = ['🍫', '🧈', '🥚', '🌾', '🥜'];
+            const chip = document.createElement('div');
+            chip.textContent = chips[Math.floor(Math.random() * chips.length)];
+            chip.style.cssText = `
+                position: fixed;
+                top: 100%;
+                left: ${Math.random() * 100}%;
+                font-size: 1.2rem;
+                z-index: 100;
+                pointer-events: none;
+                animation: float 8s ease-out forwards;
+                opacity: 0.6;
+                filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            `;
+            
+            document.body.appendChild(chip);
+            setTimeout(() => chip.remove(), 8000);
+        }
+
+        // Add temperature converter
+        function showTempConverter() {
+            const converter = document.createElement('div');
+            converter.id = 'tempConverter';
+            converter.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                background: linear-gradient(135deg, #ffffff, #f9fafb);
+                border-radius: 1rem;
+                padding: 1rem;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+                z-index: 1000;
+                font-size: 0.9rem;
+                border: 2px solid #8B4513;
+            `;
+            
+            converter.innerHTML = `
+                <div class="font-semibold text-amber-800 mb-2">🌡️ Conversión de Temperatura</div>
+                <div class="text-sm text-gray-600">
+                    <div>180°C = 350°F</div>
+                    <div>Gas Mark 4</div>
+                </div>
+                <button onclick="this.parentElement.remove()" class="text-xs text-gray-400 hover:text-gray-600 mt-2">Cerrar</button>
+            `;
+            
+            document.body.appendChild(converter);
+            
+            setTimeout(() => {
+                if (converter.parentElement) {
+                    converter.remove();
+                }
+            }, 15000);
+        }
+
+        // Initialize brownie touches
+        setTimeout(addBrownieTouches, 5000);
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Show temperature converter after 10 seconds
+        setTimeout(showTempConverter, 10000);
+
+        // Add brownie facts tooltip
+        function addBrownieFacts() {
+            const facts = [
+                "Los brownies fueron inventados por accidente en 1893",
+                "La textura perfecta debe ser fudgy, no cakey",
+                "El chocolate semiamargo da el mejor sabor",
+                "Nunca mezcles demasiado la harina",
+                "Los brownies mejoran al día siguiente"
+            ];
+            
+            let factIndex = 0;
+            setInterval(() => {
+                if (Math.random() < 0.15) { // 15% chance
+                    showNotification(`💡 Dato curioso: ${facts[factIndex % facts.length]}`, 'info');
+                    factIndex++;
+                }
+            }, 30000); // Every 30 seconds
+        }
+
+        // Initialize brownie facts
+        setTimeout(addBrownieFacts, 20000);
+
+        // CSS animation definitions for confetti
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes confetti {
+                0% { 
+                    opacity: 1; 
+                    transform: translateY(0) scale(1) rotate(0deg); 
+                }
+                100% { 
+                    opacity: 0; 
+                    transform: translateY(100vh) scale(0.3) rotate(720deg); 
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+</body>
+</html>"></i>
+                                    </span>
+                                    <div class="ingredient-visual bg-gradient-to-br from-yellow-300 to-yellow-500 group-hover:scale-110">
+                                        🧈
+                                    </div>
+                                    <div class="item-text transition-opacity duration-300 flex-grow">
+                                        <div class="transition-colors duration-300">
+                                            <strong class="text-xl">100g</strong> 
+                                            <span class="text-amber-800 font-semibold">Margarina</span>
+                                            <div class="text-sm text-gray-500 mt-1">Para la textura cremosa perfecta</div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </li>
+                            
+                            <li class="delay-2" style="animation: fadeInUp 0.8s ease-out both;">
+                                <label class="flex items-center cursor-pointer group">
+                                    <input type="checkbox" class="hidden peer">
+                                    <span class="w-10 h-10 mr-4 border-2 border-gray-300 rounded-xl flex items-center justify-center checkmark group-hover:border-amber-500">
+                                        <i class="fas fa-check text-white transform scale-0 opacity-0 transition-transform duration-200
