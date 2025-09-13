@@ -129,6 +129,7 @@ body {
 
 /* Enhanced step circles */
 .step-circle {
+    background: linear-gradient(135deg, #92400e, #78350f); /* Default background */
     box-shadow: 0 4px 15px rgba(93, 64, 55, 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -237,12 +238,13 @@ body {
 .sound-wave:nth-child(4) { animation-delay: 0.3s; }
 
 /* --- THEME: BROWNIE --- */
-.theme-brownie body {
-    background: linear-gradient(135deg, #4A2C2A 0%, #6D4C41 50%, #8D6E63 100%);
-    background-image:
-        radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.15) 0%, transparent 50%),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235D4037' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+.theme-brownie #header-background {
+    background: linear-gradient(to top, #4a2c2a, #7d5a4d);
+}
+
+.theme-brownie .instruction-tag {
+    background-color: #e0d5c4;
+    color: #5d4037;
 }
 
 .theme-brownie .heading-decorated::after {
@@ -295,9 +297,13 @@ body {
 }
 
 /* --- THEME: TRUFFLE --- */
-.theme-truffle body {
-    background: linear-gradient(135deg, #FBF3E4 0%, #F3E5AB 100%);
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4C0A1' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+.theme-truffle #header-background {
+    background: linear-gradient(to top, #702454, #a3487f);
+}
+
+.theme-truffle .instruction-tag {
+    background-color: #f3e8f0;
+    color: #832763;
 }
 
 .theme-truffle .heading-decorated::after {

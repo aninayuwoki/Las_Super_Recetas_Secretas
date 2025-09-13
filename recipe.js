@@ -76,12 +76,31 @@ function renderRecipe(recipe) {
             <input type="checkbox" class="hidden peer" data-step="${i + 1}">
             <div class="step-container flex-shrink-0 relative"><div class="step-circle w-16 h-16 text-white rounded-full flex items-center justify-center font-bold text-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">${i + 1}</div></div>
             <div class="flex-grow ml-6"><div class="item-text transition-opacity duration-300">
-                <div class="flex items-center mb-3"><h3 class="font-semibold text-xl mr-3">${step.title}</h3><div class="flex space-x-2">${step.tags.map(tag => `<span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">${tag}</span>`).join('')}</div></div>
+                <div class="flex items-center mb-3"><h3 class="font-semibold text-xl mr-3">${step.title}</h3><div class="flex space-x-2">${step.tags.map(tag => `<span class="instruction-tag px-3 py-1 rounded-full text-sm font-semibold">${tag}</span>`).join('')}</div></div>
                 <p class="leading-relaxed">${step.text}</p>
                 ${step.tip ? `<div class="mt-3 flex items-center text-sm text-gray-500"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i><span><strong>Tip:</strong> ${step.tip}</span></div>` : ''}
                 ${step.important ? `<div class="mt-3 p-3 bg-red-50 border-l-4 border-red-400 rounded"><div class="flex items-center text-sm text-red-700"><i class="fas fa-exclamation-triangle mr-2"></i><span><strong>Importante:</strong> ${step.important}</span></div></div>` : ''}
                 ${step.action && step.action.type === 'video' ? `<button id="moisesDemoBtn" class="mt-3 bg-blue-500 text-white px-4 py-2 rounded-lg">${step.action.text}</button>` : ''}
-                ${step.toppings ? `<div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">${step.toppings.map(t => `<div class="topping-option bg-gray-100 p-3 rounded-lg text-center cursor-pointer hover:scale-105 transition-transform duration-300" data-topping="${t.name}"><div class="text-2xl mb-1">${t.visual}</div><div class="text-xs font-semibold">${t.name}</div></div>`).join('')}</div><div id="selectedToppings" class="mt-3 hidden"><div class="bg-green-50 border-l-4 border-green-400 p-3 rounded"><div class="flex items-center text-sm text-green-700"><i class="fas fa-check-circle mr-2"></i><span>Toppings seleccionados: <strong id="toppingsList"></strong></span></div></div></div>` : ''}
+
+                <!-- Toppings section now correctly inside the label's item-text -->
+                ${step.toppings ? `
+                    <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+                        ${step.toppings.map(t => `
+                            <div class="topping-option bg-gray-100 p-3 rounded-lg text-center cursor-pointer hover:scale-105 transition-transform duration-300" data-topping="${t.name}">
+                                <div class="text-2xl mb-1">${t.visual}</div>
+                                <div class="text-xs font-semibold">${t.name}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div id="selectedToppings" class="mt-3 hidden">
+                        <div class="bg-green-50 border-l-4 border-green-400 p-3 rounded">
+                            <div class="flex items-center text-sm text-green-700">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span>Toppings seleccionados: <strong id="toppingsList"></strong></span>
+                            </div>
+                        </div>
+                    </div>
+                ` : ''}
             </div></div>
         </label></li>
     `).join('');
@@ -215,21 +234,23 @@ function setupMusicToggle() {
         if (btn) {
             const audio = document.getElementById('backgroundMusic');
             if (!audio) return;
+            const icon = btn.querySelector('i');
             if (audio.paused) {
                 audio.play().catch(e => console.error("Audio failed:", e));
-                btn.innerHTML = '<i class="fas fa-pause text-xl"></i>';
+                if(icon) icon.className = 'fas fa-pause text-xl';
             } else {
                 audio.pause();
-                btn.innerHTML = '<i class="fas fa-music text-xl"></i>';
+                if(icon) icon.className = 'fas fa-music text-xl';
             }
         }
     });
 }
 
 function setupBakingMode() {
-    document.body.addEventListener('click', e => {
-        if (e.target.matches('#bakingModeBtn')) toggleBakingMode(e.target);
-    });
+    const btn = document.getElementById('bakingModeBtn');
+    if (btn) {
+        btn.addEventListener('click', () => toggleBakingMode(btn));
+    }
 }
 
 function toggleBakingMode(btn) {
@@ -240,10 +261,12 @@ function toggleBakingMode(btn) {
         document.body.classList.add('baking-mode');
         currentStep = 1;
         highlightCurrentStep();
+        showNotification(`💡 ${mode} Mode Activated!`, 'info');
     } else {
         btn.innerHTML = `<i class="fas fa-fire mr-3"></i>Activate ${mode} Mode`;
         document.body.classList.remove('baking-mode');
         stopGuidedBaking();
+        showNotification(`💡 ${mode} Mode Deactivated.`, 'info');
     }
 }
 
@@ -301,9 +324,9 @@ function setRating(rating) {
 
 function setupModalButtons() {
     document.body.addEventListener('click', e => {
-        if (e.target.matches('#shoppingListBtn')) openModal('shoppingModal');
-        if (e.target.matches('#moisesDemoBtn')) openModal('moisesModal');
-        if (e.target.closest('.close-modal-btn')) openModal(e.target.closest('.modal').id);
+        if (e.target.closest('#shoppingListBtn')) openModal('shoppingModal');
+        if (e.target.closest('#moisesDemoBtn')) openModal('moisesModal');
+        if (e.target.closest('.close-modal-btn')) closeModal(e.target.closest('.modal').id);
     });
 }
 
@@ -324,7 +347,12 @@ function setupGeneralEventListeners() {
         const shareBtn = e.target.closest('#shareRecipe');
         if (shareBtn) {
             const text = `Check out this amazing recipe for ${document.title}!`;
-            navigator.clipboard.writeText(`${text}\n${window.location.href}`).then(() => showNotification('📋 Link copied!', 'success'));
+            if (navigator.share) {
+                navigator.share({ title: document.title, text: text, url: window.location.href })
+                    .catch(err => console.error("Share failed:", err));
+            } else {
+                navigator.clipboard.writeText(`${text}\n${window.location.href}`).then(() => showNotification('📋 Link copied!', 'success'));
+            }
         }
     });
     document.body.addEventListener('click', e => {
