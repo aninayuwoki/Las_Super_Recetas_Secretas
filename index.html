@@ -5,46 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Libro de Recetas Mágicas</title>
     <link rel="icon" type="image/x-icon" href="Fotos/Icons/Leonimagenmodificada.ico">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700;900&family=Pacifico&display=swap" rel="stylesheet">
-    
+
+    <!-- Unified Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FBF3E4;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4C0A1' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        .font-title {
-            font-family: 'Pacifico', cursive;
-        }
-        .font-heading {
-            font-family: 'Playfair Display', serif;
-        }
+        /* Add a little extra for the main page */
         .recipe-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0; /* Start hidden for animation */
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
-        .recipe-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .recipe-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body class="antialiased">
 
     <div class="container mx-auto p-4 sm:p-8 max-w-5xl">
-        
+
         <!-- Header -->
-        <header class="text-center my-12">
+        <header class="text-center my-12 animate-fadeInUp">
             <h1 class="font-title text-6xl md:text-8xl text-amber-800" style="text-shadow: 3px 3px 8px rgba(0,0,0,0.2);">
-                El super libro de recetas de mi Fresita 
+                El super libro de recetas de mi Fresita
             </h1>
-            <p class="text-amber-700 mt-4 text-xl md:text-2xl italic">
+            <p class="text-amber-700 mt-4 text-xl md:text-2xl italic delay-1 animate-fadeInUp">
                 Una colección de bocaditos hechos con mucho amor.
             </p>
         </header>
@@ -57,7 +52,7 @@
         </main>
 
         <!-- Footer -->
-        <footer class="text-center mt-16 text-amber-700">
+        <footer class="text-center mt-16 text-amber-700 animate-fadeInUp delay-2">
             <p>&copy; 2025 - Creado con mucho amor por tu gatito miau.</p>
         </footer>
 
@@ -65,5 +60,36 @@
 
     <!-- Script to load recipes -->
     <script src="script.js"></script>
+    <script>
+        // Intersection Observer to animate cards on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const recipeList = document.getElementById('recipe-list');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // We need to observe the cards after they are created.
+            // A MutationObserver is perfect for this.
+            const mutationObserver = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    mutation.addedNodes.forEach(node => {
+                        if (node.nodeType === 1 && node.classList.contains('recipe-card')) {
+                            observer.observe(node);
+                        }
+                    });
+                });
+            });
+
+            mutationObserver.observe(recipeList, { childList: true });
+        });
+    </script>
 </body>
 </html>
